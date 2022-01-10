@@ -3,7 +3,9 @@
 All public SuperOrbital helm charts should be maintained in this repo.
 
 * In general you should only be PRing changes to the `main` branch.
-  * The only normal exception to this, is if you want to update the README that is presented to users at the root of the [helm repo](https://helm.superorbital.io/). In this case, it is safe to update the [gh-pages README.md directly](https://github.com/superorbital/helm-charts/blob/gh-pages/README.md).
+  * The only normal exceptions to this are:
+    * You want to update the [README](https://github.com/superorbital/helm-charts/blob/gh-pages/README.md) that is presented to users at the root of the [helm repo](https://helm.superorbital.io/). In this case, it is safe to update the [gh-pages README.md directly](https://github.com/superorbital/helm-charts/blob/gh-pages/README.md).
+    * You need to modify [ArtifactHub's metadata file](https://github.com/superorbital/helm-charts/blob/gh-pages/artifacthub-repo).
   * Anything merged into main will be published to the public repo.
 
 ## Github Actions
