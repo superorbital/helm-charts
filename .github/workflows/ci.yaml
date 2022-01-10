@@ -1,0 +1,69 @@
+name: helm CI Pipeline
+on: [push]
+jobs:
+  helm-ci-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Set up Helm
+        uses: azure/setup-helm@v1
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.10"
+
+      - name: Set up chart-testing
+        uses: helm/chart-testing-action@v2.2.0
+
+      - name: Run chart-testing (list-changed)
+        id: list-changed
+        run: |
+          cd charts
+          export further_tests=false
+          declare -a updated_charts
+          for i in $(ls -C1 -d */); do
+            cd $i
+            changed=$(ct list-changed --target-branch main)
+            if [[ -n "$changed" ]]; then
+              export further_tests=true
+              export updated_charts+=($i)
+            fi
+            cd ..
+          done
+          if [[ "$further_tests" == "true" ]]; then
+            echo "::set-output name=changed::true"
+            echo "::set-output name=updated_charts::${updated_charts[*]}"
+          fi
+
+      - name: Run chart-testing (lint)
+        run: |
+          cd charts
+          updated_charts=($charts)
+          for i in "${updated_charts[@]}"; do
+            cd $i
+            ct lint --target-branch main
+            cd ..
+          done
+        env:
+          charts: ${{ steps.list-changed.outputs.updated_charts }}
+
+      - name: Create kind cluster
+        uses: helm/kind-action@v1.2.0
+        if: steps.list-changed.outputs.changed == 'true'
+
+      - name: Run chart-testing (install)
+        run: |
+          cd charts
+          updated_charts=($charts)
+          for i in "${updated_charts[@]}"; do
+            cd $i
+            ct install --target-branch main
+            cd ..
+          done
+        env:
+          charts: ${{ steps.list-changed.outputs.updated_charts }}
