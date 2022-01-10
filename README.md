@@ -1,5 +1,7 @@
 # superorbital-helm-charts
 
+[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/superorbital)](https://artifacthub.io/packages/search?repo=superorbital)
+
 The public repo is rendered into the `gh-pages` branch and can be found online at:
 
 [SuperOrbital Helm Repo](https://helm.superorbital.io/)
