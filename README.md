@@ -2,7 +2,7 @@
 
 The public repo is rendered into the `gh-pages` branch and can be found online at:
 
-[SuperOrbital Helm Repo](https://helm.superorbital.io/helm-charts/)
+[SuperOrbital Helm Repo](https://helm.superorbital.io/)
 
 ---
 
