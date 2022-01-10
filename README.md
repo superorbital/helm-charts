@@ -23,3 +23,7 @@ To uninstall the chart:
 
   `helm delete cludod`
 
+## Documentation
+
+* For detailed application installation and usage documentation please check the `README.md` in the appropriate source code repository. (e.g. [superorbital/cludo README](https://github.com/superorbital/cludo/blob/main/README.md)
+
