@@ -26,7 +26,7 @@ jobs:
           cd charts
           export further_tests=false
           declare -a updated_charts
-          for $i in $(ls -C1 -d */); do
+          for i in $(ls -C1 -d */); do
             cd $i
             changed=$(ct list-changed --target-branch main)
             if [[ -n "$changed" ]]; then
@@ -44,7 +44,7 @@ jobs:
         run: |
           cd charts
           updated_charts=($charts)
-          for $i in "${updated_charts[@]}"; do
+          for i in "${updated_charts[@]}"; do
             cd $i
             ct lint --target-branch main
             cd ..
@@ -60,7 +60,7 @@ jobs:
         run: |
           cd charts
           updated_charts=($charts)
-          for $i in "${updated_charts[@]}"; do
+          for i in "${updated_charts[@]}"; do
             cd $i
             ct install --target-branch main
             cd ..
