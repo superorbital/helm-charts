@@ -6,7 +6,7 @@ entries:
     created: "2022-01-10T22:12:14.865054608Z"
     description: A Cludo Server (cludod) Helm chart for Kubernetes
     digest: cd59334e736d516bc3a9ef88c4f455f133c2f914d1c3173d8f638bcb0ac983c3
-    icon: https://raw.githubusercontent.com/superorbital/cludo/main/images/upload-to-cloud.png
+    icon: https://raw.githubusercontent.com/superorbital/helm-charts/main/images/chart-icons/cludod.png
     name: cludod
     type: application
     urls:
