@@ -3,6 +3,17 @@ entries:
   cludod:
   - apiVersion: v2
     appVersion: 0.0.1-alpha
+    created: "2022-01-11T22:27:38.304646356Z"
+    description: A Cludo Server (cludod) Helm chart for Kubernetes
+    digest: 46b9930a4474f1364001703a41e64237f6ef1eb38e038e6c9c9706025d1c1670
+    icon: https://raw.githubusercontent.com/superorbital/helm-charts/main/images/chart-icons/cludod.png
+    name: cludod
+    type: application
+    urls:
+    - https://github.com/superorbital/helm-charts/releases/download/cludod-0.0.2/cludod-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    appVersion: 0.0.1-alpha
     created: "2022-01-10T22:12:14.865054608Z"
     description: A Cludo Server (cludod) Helm chart for Kubernetes
     digest: cd59334e736d516bc3a9ef88c4f455f133c2f914d1c3173d8f638bcb0ac983c3
@@ -12,4 +23,4 @@ entries:
     urls:
     - https://github.com/superorbital/helm-charts/releases/download/cludod-0.0.1/cludod-0.0.1.tgz
     version: 0.0.1
-generated: "2022-01-10T22:12:14.865060408Z"
+generated: "2022-01-11T22:27:38.304655656Z"
