@@ -1,1 +1,5 @@
+# temp/OS files
+.DS_Store
+
+# local files
 secret*
