@@ -8,6 +8,8 @@ All public SuperOrbital helm charts should be maintained in this repo.
     * You need to modify [ArtifactHub's metadata file](https://github.com/superorbital/helm-charts/blob/gh-pages/artifacthub-repo).
   * Anything merged into main will be published to the public repo.
 
+When making changes to a chart, **ALWAYS** make sure that you update the `version` field in the `Chart.yaml` file. If this chart will also deploy a newer version of the application, you **MUST** also update the `appVersion` field in the `Chart.yaml` file.
+
 ## Github Actions
 
 ### CI Pipeline (`ci.yaml`)
