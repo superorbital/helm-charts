@@ -5,7 +5,8 @@ IMPORTANT:
   You must still create a kubernetes secret with
   your server's configuration in it.
 
-  An example manifest is included at the bottom of this notice.
+  An example manifest can be found here:
+  https://github.com/superorbital/cludo/blob/main/k8s/kustomize/base/files-secrets/cludod-manifest-EXAMPLE.yaml
 
 
 Your release is named {{ .Release.Name }}.
@@ -14,23 +15,3 @@ To learn more about the release, try:
 
   $ helm status {{ .Release.Name }}
   $ helm get all {{ .Release.Name }}
-
----
-apiVersion: v1
-kind: Secret
-type: Opaque
-metadata:
-  name: cludod-config
-  stringData:
-    cludod.yaml: |-
-    server:
-      users:
-        - public_key: "REDACTED"
-          roles:
-            aws:
-              test:
-                session_duration: "30m"
-                access_key_id: "REDACTED"
-                secret_access_key: "REDACTED"
-          default_role: "test"
-
