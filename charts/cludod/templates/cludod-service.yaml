@@ -5,6 +5,7 @@ metadata:
   labels:
     {{- include "cludod.labels" . | nindent 4 }}
 spec:
+  externalTrafficPolicy: Local
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
